@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main ()
+{
+    char *locale = setlocale(LC_ALL, "");
+    int n = 0;
+    int k = 0;
+    int l = 0;
+    float answer = 0;
+    printf("Введите N: ");
+    scanf("%d", &n);
+    int m[n+1];
+    printf("Введите K: ");
+    scanf("%d", &k);
+    printf("Введите L: ");
+    scanf("%d", &l);
+    for (int i = 1; i <= n; i++)
+    {
+        scanf("%d", &m[i]);
+    }
+    float summ = 0;
+    for (int i = k; i<=l; i++)
+    {
+        summ += m[i];
+    }
+    float count = l-k+1;
+    answer = summ/count;
+    printf("%g ", answer);
+    return 0;
+}
