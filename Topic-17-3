@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main ()
+{
+    char *locale = setlocale(LC_ALL, "");
+    int n = 0;
+    int answer = 0;
+    printf("Введите N: ");
+    scanf("%d", &n);
+    float m[n+1];
+    for (int i = 1; i <= n; i++)
+    {
+        scanf("%e", &m[i]);
+    }
+    float min = m[2];
+    for (int i = 4; i <= n; i+=2)
+    {
+        if (min > m[i])
+        {
+            min = m[i];
+        }
+    }
+    printf("%g ", min);
+    return 0;
+}
